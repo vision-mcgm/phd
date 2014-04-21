@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2011)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: firePaper2.aux
+The style file: unsrt.bst
+Database file #1: references.bib
+Database file #2: /Users/fintan/Dropbox/MasterReferences.bib
+Warning--I didn't find a database entry for "valentine1998upside"
+Warning--I didn't find a database entry for "farah1995causes"
+Warning--empty journal in cropper1996rapid
+Warning--empty journal in treisman1993perception
+You've used 34 entries,
+            1791 wiz_defined-function locations,
+            674 strings with 9638 characters,
+and the built_in function-call counts, 8323 in all, are:
+= -- 761
+> -- 381
+< -- 0
++ -- 140
+- -- 106
+* -- 690
+:= -- 1348
+add.period$ -- 102
+call.type$ -- 34
+change.case$ -- 34
+chr.to.int$ -- 0
+cite$ -- 36
+duplicate$ -- 303
+empty$ -- 786
+format.name$ -- 106
+if$ -- 1766
+int.to.chr$ -- 0
+int.to.str$ -- 34
+missing$ -- 34
+newline$ -- 173
+num.names$ -- 34
+pop$ -- 44
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 113
+stack$ -- 0
+substring$ -- 763
+swap$ -- 32
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 93
+width$ -- 36
+write$ -- 371
+(There were 4 warnings)

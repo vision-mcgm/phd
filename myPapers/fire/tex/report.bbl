@@ -1,0 +1,180 @@
+\begin{thebibliography}{10}
+
+\bibitem{castelhano2007see}
+M.~Castelhano, M.~Wieth, and J.~Henderson.
+\newblock {I see what you see: Eye movements in real-world scenes are affected
+  by perceived direction of gaze}.
+\newblock {\em Attention in Cognitive Systems. Theories and Systems from an
+  Interdisciplinary Viewpoint}, pages 251--262, 2007.
+
+\bibitem{hietanen1999does}
+J.K. Hietanen.
+\newblock {Does your gaze direction and head orientation shift my visual
+  attention?}
+\newblock {\em NeuroReport}, 10(16):3443, 1999.
+
+\bibitem{tian2002recognizing}
+Y.I. Tian, T.~Kanade, and J.F. Cohn.
+\newblock {Recognizing action units for facial expression analysis}.
+\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
+  on}, 23(2):97--115, 2002.
+
+\bibitem{gasser1967development}
+R.F. Gasser.
+\newblock {The development of the facial muscles in man}.
+\newblock {\em American Journal of Anatomy}, 120(2):357--375, 1967.
+
+\bibitem{kanwisher1997fusiform}
+N.~Kanwisher, J.~McDermott, and M.M. Chun.
+\newblock {The fusiform face area: a module in human extrastriate cortex
+  specialized for face perception}.
+\newblock {\em Journal of Neuroscience}, 17(11):4302, 1997.
+
+\bibitem{sirovich1987low}
+L.~Sirovich and M.~Kirby.
+\newblock {Low-dimensional procedure for the characterization of human faces}.
+\newblock {\em Journal of the Optical Society of America A}, 4(3):519--524,
+  1987.
+
+\bibitem{patterson1998artificial}
+D.W. Patterson.
+\newblock {\em {Artificial neural networks: theory and applications}}.
+\newblock Prentice Hall PTR Upper Saddle River, NJ, USA, 1998.
+
+\bibitem{takeuchi1996global}
+Y.~Takeuchi.
+\newblock {\em {Global dynamical properties of Lotka-Volterra systems}}.
+\newblock World Scientific Pub Co Inc, 1996.
+
+\bibitem{bartlett1984typicality}
+J.C. Bartlett, S.~Hurry, and W.~Thorley.
+\newblock {Typicality and familiarity of faces.}
+\newblock {\em Memory \& Cognition}, 1984.
+
+\bibitem{light1979recognition}
+L.L. Light, F.~Kayra-Stuart, and S.~Hollander.
+\newblock {Recognition memory for typical and unusual faces}.
+\newblock {\em Journal of Experimental Psychology: Human Learning and Memory},
+  5(3):212--228, 1979.
+
+\bibitem{goldstein1975recognition}
+A.G. Goldstein.
+\newblock {Recognition of inverted photographs of faces by children and
+  adults.}
+\newblock {\em The Journal of genetic psychology}, 127(1st Half):109, 1975.
+
+\bibitem{sober1981principle}
+E.~Sober.
+\newblock {The principle of parsimony}.
+\newblock {\em The British Journal for the Philosophy of Science},
+  32(2):145--156, 1981.
+
+\bibitem{tsujimoto1978distorted}
+R.N. Tsujimoto, J.~Wilde, and D.R. Robertson.
+\newblock {Distorted memory for examplars of a social structure: Evidence for
+  schematic memory processes}.
+\newblock {\em Journal of Personality and Social Psychology},
+  36(12):1402--1414, 1978.
+
+\bibitem{alba1983memory}
+J.W. Alba and L.~Hasher.
+\newblock {Is memory schematic?}
+\newblock {\em Psychological Bulletin}, 93(2):203--231, 1983.
+
+\bibitem{valentine1991unified}
+T.~Valentine.
+\newblock {A unified account of the effects of distinctiveness, inversion, and
+  race in face recognition}.
+\newblock {\em The Quarterly Journal of Experimental Psychology Section A},
+  43(2):161--204, 1991.
+
+\bibitem{bruce1986understanding}
+V.~Bruce and A.~Young.
+\newblock {Understanding face recognition.}
+\newblock {\em British journal of psychology}, 1986.
+
+\bibitem{hole}
+Victoria~Bourne Graham~Hole.
+\newblock {\em Face Processing: Psychological, Neuropsychological, and Applied
+  Perspectives}.
+\newblock OUP Oxford, 2010.
+
+\bibitem{burton1993naming}
+A.M. Burton and V.~Bruce.
+\newblock {Naming faces and naming names: exploring an interactive activation
+  model of person recognition.}
+\newblock {\em Memory}, 1(4):457--480, 1993.
+
+\bibitem{cohen2006immune}
+I.~Cohen.
+\newblock {Immune system computation and the immunological homunculus}.
+\newblock {\em Model Driven Engineering Languages and Systems}, pages 499--512,
+  2006.
+
+\bibitem{cobelli2002physiological}
+C.~Cobelli, G.~Nucci, and S.~Del~Prato.
+\newblock {A physiological simulation model of the glucose-insulin system}.
+\newblock In {\em BMES/EMBS Conference, 1999. Proceedings of the First Joint},
+  volume~2, page 999. IEEE, 2002.
+
+\bibitem{wood1987principal}
+F.~Wood, K.~Esbensen, and P.~Geladi.
+\newblock {Principal component analysis}.
+\newblock {\em Chemometr. Intel. Lab. Syst}, 2:37--52, 1987.
+
+\bibitem{roweis1998algorithms}
+S.~Roweis.
+\newblock {EM algorithms for PCA and SPCA}.
+\newblock {\em Advances in neural information processing systems}, pages
+  626--632, 1998.
+
+\bibitem{dempster1977maximum}
+A.P. Dempster, N.M. Laird, D.B. Rubin, et~al.
+\newblock {Maximum likelihood from incomplete data via the EM algorithm}.
+\newblock {\em Journal of the Royal Statistical Society. Series B
+  (Methodological)}, 39(1):1--38, 1977.
+
+\bibitem{de1994singular}
+L.~De~Lathauwer, B.~De~Moor, J.~Vandewalle, and B.S.S. by~Higher-Order.
+\newblock {Singular Value Decomposition}.
+\newblock In {\em Proc. EUSIPCO-94, Edinburgh, Scotland, UK}, volume~1, pages
+  175--178, 1994.
+
+\bibitem{sprengelmeyer1997disgust}
+R.~Sprengelmeyer, AW~Young, I.~Pundt, A.~Sprengelmeyer, AJ~Calder, G.~Berrios,
+  R.~Winkel, W.~Vollm{\\"o}eller, W.~Kuhn, G.~Sartory, et~al.
+\newblock {Disgust implicated in obsessive--compulsive disorder}.
+\newblock {\em Proceedings of the Royal Society of London. Series B: Biological
+  Sciences}, 264(1389):1767, 1997.
+
+\bibitem{calder2003facial}
+A.J. Calder, J.~Keane, T.~Manly, R.~Sprengelmeyer, S.~Scott, I.~Nimmo-Smith,
+  and A.W. Young.
+\newblock {Facial expression recognition across the adult life span}.
+\newblock {\em Neuropsychologia}, 41(2):195--202, 2003.
+
+\bibitem{sprengelmeyer1999knowing}
+R.~Sprengelmeyer, A.W. Young, U.~Schroeder, P.G. Grossenbacher, J.~Federlein,
+  T.~Buttner, and H.~Przuntek.
+\newblock {Knowing no fear}.
+\newblock {\em Proceedings of the Royal Society of London. Series B: Biological
+  Sciences}, 266(1437):2451, 1999.
+
+\bibitem{cabeza2001handbook}
+R.~Cabeza and A.~Kingstone.
+\newblock {\em {Handbook of functional neuroimaging of cognition}}.
+\newblock The MIT Press, 2001.
+
+\bibitem{smith2007circuit}
+S.J. Smith.
+\newblock {Circuit reconstruction tools today}.
+\newblock {\em Current opinion in neurobiology}, 17(5):601--608, 2007.
+
+\bibitem{mcowan1995algorithms}
+PW~McOwan and A.~Johnston.
+\newblock {The algorithms of natural vision: The multi-channel gradient model}.
+\newblock In {\em Genetic Algorithms in Engineering Systems: Innovations and
+  Applications, 1995. GALESIA. First International Conference on (Conf. Publ.
+  No. 414)}, pages 319--324, 1995.
+
+\end{thebibliography}

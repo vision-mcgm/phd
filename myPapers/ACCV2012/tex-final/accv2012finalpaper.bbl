@@ -1,0 +1,166 @@
+\begin{thebibliography}{10}
+
+\bibitem{jolliffe2002principal}
+Jolliffe, I., MyiLibrary:
+\newblock Principal component analysis. Volume~2.
+\newblock Wiley Online Library (2002)
+
+\bibitem{haxby2000distributed}
+Haxby, J., Hoffman, E., Gobbini, M.:
+\newblock The distributed human neural system for face perception.
+\newblock Trends in cognitive sciences \textbf{4} (2000)  223--233
+
+\bibitem{bitouk2008face}
+Bitouk, D., Kumar, N., Dhillon, S., Belhumeur, P., Nayar, S.:
+\newblock Face swapping: automatically replacing faces in photographs.
+\newblock In: ACM Transactions on Graphics (TOG). Volume~27., ACM (2008) ~39
+
+\bibitem{hasselmo1989role}
+Hasselmo, M., Rolls, E., Baylis, G.:
+\newblock The role of expression and identity in the face-selective responses
+  of neurons in the temporal visual cortex of the monkey.
+\newblock Behavioural brain research \textbf{32} (1989)  203--218
+
+\bibitem{parry1991dissociable}
+Parry, F., Young, A., Shona, J., Saul, M., Moss, A.:
+\newblock Dissociable face processing impairments after brain injury.
+\newblock Journal of Clinical and Experimental Neuropsychology \textbf{13}
+  (1991)  545--558
+
+\bibitem{calder2001principal}
+Calder, A., Burton, A., Miller, P., Young, A., Akamatsu, S.:
+\newblock A principal component analysis of facial expressions.
+\newblock Vision research \textbf{41} (2001)  1179--1208
+
+\bibitem{rosenblum1996human}
+Rosenblum, M., Yacoob, Y., Davis, L.:
+\newblock Human expression recognition from motion using a radial basis
+  function network architecture.
+\newblock Neural Networks, IEEE Transactions on \textbf{7} (1996)  1121--1138
+
+\bibitem{essa1995facial}
+Essa, I., Pentland, A.:
+\newblock Facial expression recognition using a dynamic model and motion
+  energy.
+\newblock In: Computer Vision, 1995. Proceedings., Fifth International
+  Conference on, IEEE (1995)  360--367
+
+\bibitem{bassili1978facial}
+Bassili, J.:
+\newblock Facial motion in the perception of faces and of emotional expression.
+\newblock Journal of Experimental Psychology: Human Perception and Performance
+  \textbf{4} (1978)  373
+
+\bibitem{grossberg2010children}
+Grossberg, S., Vladusich, T.:
+\newblock How do children learn to follow gaze, share joint attention, imitate
+  their teachers, and use tools during social interactions?
+\newblock Neural Networks \textbf{23} (2010)  940--965
+
+\bibitem{valentine2001face}
+Valentine, T.:
+\newblock Face-space models of face recognition.
+\newblock Computational, geometric, and process perspectives on facial
+  cognition: Contexts and challenges (2001)  83--113
+
+\bibitem{turk1991face}
+Turk, M., Pentland, A.:
+\newblock Face recognition using eigenfaces.
+\newblock In: Computer Vision and Pattern Recognition, 1991. Proceedings
+  CVPR'91., IEEE Computer Society Conference on, IEEE (1991)  586--591
+
+\bibitem{itti2003realistic}
+Itti, L., Dhavale, N., Pighin, F.:
+\newblock Realistic avatar eye and head animation using a neurobiological model
+  of visual attention.
+\newblock Technical report, DTIC Document (2003)
+
+\bibitem{rajan2002realistic}
+Rajan, V., Subramanian, S., Keenan, D., Johnson, A., Sandin, D., DeFanti, T.:
+\newblock A realistic video avatar system for networked virtual environments.
+\newblock Proceedings of IPT (2002)
+
+\bibitem{mori1970uncanny}
+Mori, M.:
+\newblock The uncanny valley.
+\newblock Energy \textbf{7} (1970)  33--35
+
+\bibitem{mcowan1995algorithms}
+McOwan, P., Johnston, A.:
+\newblock The algorithms of natural vision: The multi-channel gradient model.
+\newblock In: Genetic Algorithms in Engineering Systems: Innovations and
+  Applications, 1995. GALESIA. First International Conference on (Conf. Publ.
+  No. 414), IET (1995)  319--324
+
+\bibitem{anderson2003real}
+Anderson, K., McOwan, P.:
+\newblock Real-time emotion recognition using biologically inspired models.
+\newblock In: Audio-and Video-Based Biometric Person Authentication, Springer
+  (2003)  1056--1056
+
+\bibitem{website:fermentas-lambda}
+Machines, S.:
+\newblock Faceapi product page (2012)
+
+\bibitem{blanz1999morphable}
+Blanz, V., Vetter, T.:
+\newblock A morphable model for the synthesis of 3d faces.
+\newblock In: Proceedings of the 26th annual conference on Computer graphics
+  and interactive techniques, ACM Press/Addison-Wesley Publishing Co. (1999)
+  187--194
+
+\bibitem{brennan1985caricature}
+Brennan, S.:
+\newblock Caricature generator: The dynamic exaggeration of faces by computer.
+\newblock Leonardo \textbf{18} (1985)  170--178
+
+\bibitem{rotshtein2004morphing}
+Rotshtein, P., Henson, R., Treves, A., Driver, J., Dolan, R.:
+\newblock Morphing marilyn into maggie dissociates physical and identity face
+  representations in the brain.
+\newblock Nature neuroscience \textbf{8} (2004)  107--113
+
+\bibitem{galton1879composite}
+Galton, F.:
+\newblock Composite portraits, made by combining those of many different
+  persons into a single resultant figure.
+\newblock The Journal of the Anthropological Institute of Great Britain and
+  Ireland \textbf{8} (1879)  132--144
+
+\bibitem{polesel2000image}
+Polesel, A., Ramponi, G., Mathews, V.:
+\newblock Image enhancement via adaptive unsharp masking.
+\newblock Image Processing, IEEE Transactions on \textbf{9} (2000)  505--510
+
+\bibitem{liu2001expressive}
+Liu, Z., Shan, Y., Zhang, Z.:
+\newblock Expressive expression mapping with ratio images.
+\newblock In: Proceedings of the 28th annual conference on Computer graphics
+  and interactive techniques, ACM (2001)  271--276
+
+\bibitem{theobald2007real}
+Theobald, B., Matthews, I., Cohn, J., Boker, S.:
+\newblock Real-time expression cloning using appearance models.
+\newblock In: Proceedings of the 9th international conference on Multimodal
+  interfaces, ACM (2007)  134--139
+
+\bibitem{cook2012self}
+Cook, R., Johnston, A., Heyes, C.:
+\newblock Self-recognition of avatar motion: how do i know it's me?
+\newblock Proceedings of the Royal Society B: Biological Sciences \textbf{279}
+  (2012)  669--674
+
+\bibitem{grammer1994human}
+Grammer, K., Thornhill, R.:
+\newblock Human (homo sapiens) facial attractiveness and sexual selection: the
+  role of symmetry and averageness.
+\newblock Journal of Comparative Psychology; Journal of Comparative Psychology
+  \textbf{108} (1994)  233
+
+\bibitem{muller2001face}
+M{\"u}ller, W., Spierling, U., Alexa, M., Rieger, T.:
+\newblock Face-to-face with your assistant. realization issues of animated user
+  interface agents for home appliances.
+\newblock Computers \& Graphics \textbf{25} (2001)  593--600
+
+\end{thebibliography}

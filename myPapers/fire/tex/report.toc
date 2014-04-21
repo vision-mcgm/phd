@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {section}{\numberline {2}Literature Review}{3}
+\contentsline {subsection}{\numberline {2.1}Existing efforts to model face processing}{3}
+\contentsline {subsection}{\numberline {2.2}The expression modelling pipeline}{8}
+\contentsline {section}{\numberline {3}Modelling dynamic expressions}{8}
+\contentsline {subsection}{\numberline {3.1}Data collection and post-processing}{10}
+\contentsline {subsection}{\numberline {3.2}The PCA\ensuremath {^{\textrm {2}}} pipeline}{11}
+\contentsline {subsection}{\numberline {3.3}Effect of the number of PCs}{13}
+\contentsline {subsection}{\numberline {3.4}Generating artificial smiles}{14}
+\contentsline {subsection}{\numberline {3.5}Caricaturing and temporal dynamics}{15}
+\contentsline {section}{\numberline {4}Conclusion}{16}
+\contentsline {section}{\numberline {A}The UCL Vision Research Lab's expression space pipeline}{20}
+\contentsline {section}{\numberline {B}Source code}{22}
+\contentsline {section}{\numberline {C}Video files}{23}
+\contentsline {section}{\numberline {D}Jokes used to generate the smiles during filming}{24}

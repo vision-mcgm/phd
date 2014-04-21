@@ -1,0 +1,672 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+Fire is a complex, dynamic visual stimulus with pleasing aesthetic qualities.
+ Its visual percept is produced by an exothermic combustion reaction with
+ numerous applications (heating, cooking, defence, and agriculture) which
+ confer great evolutionary advantage.
+\end_layout
+
+\begin_layout Standard
+We conducted the first psychophysical evaluation of the visual representations
+ underlying the perception, short-term memory and comparison of moving flames.
+ Our investigation posed two questions.
+ Firstly, what low-level visual features play an important part in the perceptio
+n of fire? Secondly, are these simple features grouped into complex higher-level
+ percepts?
+\end_layout
+
+\begin_layout Standard
+Our experiments used the delayed-match-to-sample and temporal search paradigms.
+ We begin by giving some background information on these techniques.
+\end_layout
+
+\begin_layout Section
+Background: delayed match-to-sample and temporal visual search
+\end_layout
+
+\begin_layout Standard
+A delayed-match-to-sample trial comprises a 
+\series bold
+sample 
+\series default
+followed by one or more 
+\series bold
+tests.
+
+\series default
+ The subject indicates which test corresponds to the sample (with one test
+ the paradigm is yes/no; with 
+\begin_inset Formula $n$
+\end_inset
+
+ tests it is 
+\begin_inset Formula $n$
+\end_inset
+
+-AFC).
+\end_layout
+
+\begin_layout Standard
+If the test images are identical in size to the sample, a simple matching
+ process is performed.
+ When the test images are larger (if, for example, the sample is an eye
+ and the test images a series of different faces), we say that the subject
+ is performing spatial visual search.
+\end_layout
+
+\begin_layout Standard
+When the stimuli are dynamic (video clips), an additional time dimension
+ is available.
+ Thus, if the tests are longer than the sample, we say that temporal visual
+ search is at work.
+ The subject is looking for the sample inside a search space defined by
+ the tests.
+\end_layout
+
+\begin_layout Standard
+The search space may be either continuous or discrete.
+ For example, if we present a 1-second sample followed by 4 1-second tests,
+ we have a discrete search space with 4 alternatives.
+ However, if we present a 1-second sample and a single 10-second test, we
+ have a continuous search space; the sample may begin anywhere in those
+ ten seconds.
+\end_layout
+
+\begin_layout Standard
+This division has an exact parallel in space.
+ When scanning a list of 10 words for a target word, the search space is
+ discrete.
+ However, when looking for a word in a wordsearch (see Fig.
+ INS), the search space is continuous.
+ Generally, continuous search is much harder than discrete search.
+\end_layout
+
+\begin_layout Subsection
+Global and local features (spatial and temporal)
+\end_layout
+
+\begin_layout Section
+Which low-level features are important in fire perception?
+\end_layout
+
+\begin_layout Standard
+To investigate the kinds of basic visual information which are integrated
+ into fire percepts, we used a 2AFC delayed-match-to-sample task in which
+ aspects of the sample were altered.
+\end_layout
+
+\begin_layout Subsection
+Experiment 1: Methodology
+\end_layout
+
+\begin_layout Standard
+Video clips were acquired from a hearth fire using a Sony INS camera recording
+ at 50 Hz with CCD gain set to zero.
+ After cropping to remove the background and fireplace, clips measured 641
+ pixels high by 564 pixels wide.
+ 45 minutes of video was recorded.
+\end_layout
+
+\begin_layout Standard
+Stimuli were displayed at 50 Hz on an INS monitor with a refresh rate of
+ 100 Hz and a resolution of INS.
+ The active video area subtended a visual angle of INS; subjects used a
+ chin-rest at a distance of INS from the screen and were asked not to deviate
+ their head angle from the vertical.
+ Subjects were not requested to fixate, and the experiment took place in
+ a darkened room.
+\end_layout
+
+\begin_layout Standard
+In each trial, a sample was presented first, followed by two tests.
+ To prevent easy identification on the basis of first and last frames, tests
+ were made 1.2 times longer than samples, with a short pre-clip and post-clip.
+\end_layout
+
+\begin_layout Standard
+This experiment used an INS-frame subset of the 45-minute recording (using
+ the whole recording would have allowed discrimination based on changes
+ in position of the fuel logs, not the flame activity in which we are interested
+).
+ Nonoverlapping tests were picked first, and the sample was picked from
+ one of the tests.
+\end_layout
+
+\begin_layout Standard
+Tests were shown as recorded, but we manipulated the sample in three ways:
+ 1) colour-shifting by rotating INS in HSV space; 2) spatial inversion (rotation
+ by 180º); 3) temporal inversion (playback in reverse).
+\end_layout
+
+\begin_layout Standard
+INS block details, times, ISIs
+\end_layout
+
+\begin_layout Standard
+INS n details
+\end_layout
+
+\begin_layout Standard
+We varied the manipulation applied to the sample.
+ There were 4 conditions: untouched, colour-shifted, temporal inversion,
+ and spatial inversion.
+\end_layout
+
+\begin_layout Subsection
+Experiment 1: Results
+\end_layout
+
+\begin_layout Standard
+Mean accuracy for the untouched samples was INS.
+ The 3 manipulations caused the following drops in accuracy (see Fig.
+ INS):
+\end_layout
+
+\begin_layout Standard
+INS table
+\end_layout
+
+\begin_layout Subsection
+Experiment 1: Discussion
+\end_layout
+
+\begin_layout Standard
+During this task, presentation of the sample drove a visual percept of the
+ manipulated stimulus.
+ This percept was then stored in visual working memory and compared in turn
+ against the two incoming percepts generated by the tests.
+\end_layout
+
+\begin_layout Standard
+Subjects thus had to compare a memory generated by a disrupted sample against
+ a percept driven by an untouched test.
+ Some disruptions (such as a 5% increase in sample brightness) are inconsequenti
+al for matching, whereas some others (such as a random shuffling of the
+ pixels in the sample) make matching impossible.
+ The more important a particular aspect is for matching, the greater the
+ impairment in accuracy.
+\end_layout
+
+\begin_layout Standard
+The small drop in accuracy caused by hue inversion shows that absolute colour
+ information is not very important in matching.
+ This is as expected, as fire's colour range is generally quite narrow.
+\end_layout
+
+\begin_layout Standard
+Reversing the sample caused a greater accuracy drop of INS.
+ It was surprising that subjects could still perform above chance in this
+ condition, since it induced reversion of motion percepts.
+\end_layout
+
+\begin_layout Standard
+Inverting the sample caused the greatest accuracy drop, of INS to INS.
+ This suggests (as with the phenomenon of face inversion) that configural
+ information was the most important for matching.
+\end_layout
+
+\begin_layout Standard
+The small drop due to colour inversion, combined with the large drop due
+ to spatial inversion, implied that shape information is more important
+ than texture gradients.
+ Our next experiment, accordingly, removed all texture gradients, leaving
+ only shape information.
+\end_layout
+
+\begin_layout Subsection
+Experiment 2: Methodology
+\end_layout
+
+\begin_layout Standard
+We used a 2AFC delayed-match-to-sample task with the same experimental apparatus
+ and 1000-frame subcorpus as Experiment 1.
+ Tests were untouched, and samples were manipulated using a Sobel edge filter
+ (INS details).
+\end_layout
+
+\begin_layout Subsection
+Experiment 2: Results and discussion
+\end_layout
+
+\begin_layout Standard
+INS little drop
+\end_layout
+
+\begin_layout Standard
+INS edges much more important than texture
+\end_layout
+
+\begin_layout Standard
+INS therefore shape is central
+\end_layout
+
+\begin_layout Standard
+INS NOW we see how things are integrated into global features...
+\end_layout
+
+\begin_layout Section
+What global percepts are generated by dynamic fire?
+\end_layout
+
+\begin_layout Standard
+Rich visual stimuli generate high-level visual percepts, formed by processing
+ low-level features.
+ For example, when observing a face, we can judge its gender, age, health,
+ nationality, expression and gaze direction.
+\end_layout
+
+\begin_layout Standard
+When presented with a fire, it is useful to judge its temperature, size
+ derivative (growing or shrinking), and affect (utility for cooking or defence).
+ The analysis of these percepts would have required high-quality video of
+ a range of different fires.
+ Instead, we investigated how much information was necessary for subjects
+ to judge whether a fire video was being played forwards or in reverse.
+\end_layout
+
+\begin_layout Subsection
+Experiment 3: Methodology
+\end_layout
+
+\begin_layout Standard
+We used a yes/no task with the same experimental apparatus and 1000-frame
+ subcorpus as Experiment 1.
+ In each trial, a single clip was presented and subjects were asked to judge
+ whether it was being played forwards or backwards.
+\end_layout
+
+\begin_layout Standard
+We manipulated the clips' frame rate (not their speed) between INS and INS
+ frames/second, as well as the angle at which clips were played.
+\end_layout
+
+\begin_layout Standard
+INS trials
+\end_layout
+
+\begin_layout Subsection
+Experiment 3: Results and discussion
+\end_layout
+
+\begin_layout Standard
+Backwards detection accuracy is very high at the the normal frame rate of
+ 50 Hz (87%).
+ With decreasing frame rate, accuracy drops to chance by 10 Hz, where it
+ remains for lower frame rates.
+ This shows that consecutive frames must be separated by less than 1/5=0.2
+ seconds in order to detect playback direction above chance.
+\end_layout
+
+\begin_layout Standard
+When fire moves forwards, upwards motion is perceived; this task is therefore
+ similar to direction-of-motion detection.
+ Human first- and secord-order motion systems differ in the frame rates
+ to which they are sensitive: first-order motion can be retrieved only at
+ high frame rates, whereas second-order motion can be computed from displaced
+ form at low frame rates.
+\end_layout
+
+\begin_layout Standard
+Backwards detection in fire can only be performed at high frame rates, showing
+ that the motion percept we generate from fire is due to first-order motion
+ and not the recognition of displaced features seen in the previous frame.
+ Detecting a displaced form requires object permanence, a form of temporally
+ nonlocal percept.
+ In the backwards detection task, subjects were unable to construct this
+ percept from video frames.
+\end_layout
+
+\begin_layout Standard
+When performing matching tasks, subjects compare temporally global properties
+ of candidate matches.
+ This can help shrink search spaces.
+ To investigate how this process happens on fire stimuli, we measured matching
+ performance in function of search space size.
+\end_layout
+
+\begin_layout Subsection
+Experiment 4: Methodology
+\end_layout
+
+\begin_layout Standard
+We used a 2AFC delayed-match-to-sample task with the same experimental apparatus
+ and 1000-frame subcorpus as Experiment 1.
+ In each trial, a sample was presented first, followed by two longer tests,
+ one of which contained the sample.
+\end_layout
+
+\begin_layout Standard
+We manipulated the sample length and the ratio of test length to sample
+ length.
+ Test/sample ratio was varied between 1.2 and 2.
+\end_layout
+
+\begin_layout Standard
+Sample length was varied across blocks, while test/sample ratio was varied
+ within blocks.
+ 12 subjects were tested.
+\end_layout
+
+\begin_layout Subsection
+Experiment 4: Results and discussion
+\end_layout
+
+\begin_layout Standard
+For each sample length, accuracy drops significantly as test length increased.
+ Drops (by test length) were 9% (0.1s), 10% (0.5s) and 5% (1s).
+ In each case, higher ratio leads to a larger search space, increased difficulty
+ and reduced accuracy.
+\end_layout
+
+\begin_layout Standard
+As described in the introduction, nonlocal properties aid search.
+ Higher-level properties can be compared against each other, and as they
+ are less numerous than lower-level ones, the search space is smaller.
+ Do these results fit with low-level or high-level matching?
+\end_layout
+
+\begin_layout Standard
+Properties which are stable (temporally high-level) are built over time
+ from low-level features.
+ Thus, we would expect longer tests to build more reliable stable properties,
+ which would aid matching.
+ Conversely, properties which vary rapidly (temporally low-level) are not
+ constructed into stable high-level features.
+\end_layout
+
+\begin_layout Standard
+We found that longer tests confer no such benefit.
+ Accuracy was found to depend not on sample length or test length, but on
+ the test/sample ratio (see Fig.
+ INS).
+ This is consistent with matching of lists of low-level features rather
+ than high-level property matching.
+\end_layout
+
+\begin_layout Standard
+In other words, it is just as difficult to search for a 1 second sample
+ as for an 0.1 second sample.
+ Exposure to longer stimuli did not allow them to be better characterised.
+\end_layout
+
+\begin_layout Standard
+To further investigate the matching of flame features, we performed a more
+ detailed matching experiment.
+\end_layout
+
+\begin_layout Subsection
+Experiment 5: Methodology
+\end_layout
+
+\begin_layout Standard
+We used a yes/no delayed-match-to-sample task with the same experimental
+ apparatus as Experiment 1.
+ The corpus of video frames was increased in size to 10000 frames.
+\end_layout
+
+\begin_layout Standard
+On each trial, a sample was presented first, followed by a longer test.
+ The 
+\begin_inset Quotes eld
+\end_inset
+
+sample-present
+\begin_inset Quotes erd
+\end_inset
+
+ tests thus consisted of the sample, preceded by a pre-clip and followed
+ by a post-clip.
+ Each clip represented a continuous section of the corpus.
+\end_layout
+
+\begin_layout Standard
+Clips were chosen in such a way that we could control the length of the
+ pre-clip (the pre-length) and that of the post-clip (the post-length).
+ Sample length was held constant at 1 second.
+ The experiment was split into blocks of INS trials (approx.
+ INS minutes).
+ Pre- and post-lengths were both varied within blocks.
+\end_layout
+
+\begin_layout Standard
+12 subjects were tested.
+\end_layout
+
+\begin_layout Subsection
+Experiment 5: Results and discussion
+\end_layout
+
+\begin_layout Standard
+Accuracy dropped from 78% (with no pre-clip or post-clip) to 64% (with pre-lengt
+h and post-length of 2s); we find accuracy comparable with the 1-second
+ test from Experiment 4.
+\end_layout
+
+\begin_layout Standard
+Asymmetry between pre-length and post-length had no significant effect.
+ However, accuracy is generally higher yes-trials (where the sample was
+ present in the test) and no-trials (where the sample was absent).
+ Subjects detect presence much more reliably than absence.
+\end_layout
+
+\begin_layout Standard
+This experiment confirms
+\end_layout
+
+\begin_layout Subsection
+Experiment 6: Methodology
+\end_layout
+
+\begin_layout Standard
+We used a yes/no delayed-match-to-sample task with the same experimental
+ apparatus and data corpus as Experiment 1.
+\end_layout
+
+\begin_layout Standard
+On each trial, we presented a test followed by a sample which was 1.2 times
+ the length of the test.
+ The I
+\end_layout
+
+\begin_layout Subsection
+Experiment 6: Results and discussion
+\end_layout
+
+\begin_layout Section
+Discussion
+\end_layout
+
+\begin_layout Standard
+All visual percepts are built from simpler features.
+ Retinal edge and bar detectors are among the simplest; in striate cortex
+ we find areas which represent motion, form and colour.
+ We investigated how properties involving colour, configuration, edges and
+ motion are integrated into percepts allowing short fire stimuli to be matched.
+ We asked which of these properties were important, and how well they were
+ combined into higher-level features.
+\end_layout
+
+\begin_layout Standard
+Our dataset, obtained from a hearth fire, is representative of the type
+ of fire usually seen by the human visual system.
+ We do not consider simpler forms (for example a candle flame) or more transient
+ forms (for example a natural gas explosion).
+ Neither do we consider difference instances of small wood fires, as they
+ would be trivially differentiable based on overall shape and background.
+ Our task was therefore one of individuation rather than classification,
+ and focussed on the dynamic visual features available in video clips of
+ flame.
+\end_layout
+
+\begin_layout Standard
+Which visual features are important for fire matching? Using a delayed-match-to-
+sample paradigm, we found that alteration in the sample of colour, playback
+ direction and clip orientation caused increasing accuracy drops.
+ This shows that colour variations are not very important for matching;
+ they may be represented, but do not allow discrimination.
+\end_layout
+
+\begin_layout Standard
+Processing with a Sobel filter, leaving only edges, impairs detection accuracy
+ by only INS%.
+ Representations of fire are thus heavily edge-based.
+\end_layout
+
+\begin_layout Subsection
+Orientation sensitivity
+\end_layout
+
+\begin_layout Standard
+Impaired high-level perception under inversion is one of the hallmarks of
+ the archetypal global percept, the human face (INS refs), where inversion
+ sensitivity shows expertise and specialisation.
+ Does inversion impair fire percepts?
+\end_layout
+
+\begin_layout Standard
+We observed small but nonsignificant drops under inversion in Experiment
+ 3 (backwards detection) and Experiment 6 (long-ISI matching).
+ These drops are much smaller than those found in face matching (INS refs),
+ showing that fire perception is nowhere near as specialised.
+\end_layout
+
+\begin_layout Subsection
+Temporal feature integration
+\end_layout
+
+\begin_layout Standard
+Global features can be more useful than lists of local features; this effect
+ is seen in face perception, where slightly misaligning the halves of an
+ image destroys global identity percets(INS ref).
+ This kind of integration over space is not apparent in fire, since it is
+ spatially extremely self-similar and, unlike the face, has no stereotypical
+ configuration.We examined the integration of short-term percepts, such as
+ a single flame flicker, into percepts attached to each clip: feature integratio
+n in time rather than space.
+\end_layout
+
+\begin_layout Standard
+When varying sample and test lengths in a 2AFC task, accuracy was found
+ to depend not on sample length but on sample/test ratio.
+ Thus, if any global features are built, they are not of much help.
+\end_layout
+
+\begin_layout Standard
+Research indicates that global features have attractor properties: they
+ take time to construct (INS ref) and decay suddenly rather than gradually
+ (INS ref).
+ Fire percepts show linear decay with sample-test delay of 1 to 15 seconds,
+ which is consistent with a gradual loss of independent local features from
+ working memory.
+\end_layout
+
+\begin_layout Standard
+Global features are also translation-invariant, both in space (an object
+ is detectable wherever it is in the visual field) and in time (a smile
+ is detectable anywhere in a stream of facial expressions).
+ This is because they pop-out, reducing the search space which attentional
+ processes must scan.
+\end_layout
+
+\begin_layout Standard
+In fire matching, the search space rapidly becomes so large that matching
+ is very hard.
+\end_layout
+
+\begin_layout Subsection
+Fire is a dynamic texture
+\end_layout
+
+\begin_layout Standard
+Visual textures can be characterised by their lack of definite boundaries
+ (a texture can fill any shape) and difficulty of individuation (surfaces
+ or patches with the same texture are rarely differentiated).
+ Fire has no defined shape; furthermore, we have shown that sections of
+ a hearth fire stimulus are very difficult to individuate and do not pop-out
+ from longer sequences.
+ 
+\end_layout
+
+\begin_layout Subsection
+Why is fire aesthetic?
+\end_layout
+
+\begin_layout Standard
+It is often noted that fire draws attention and is considered pleasant to
+ observe.
+ Apart from its innate salience as a useful and dangerous object, we posit
+ that fire is interesting to watch because it has semilocal features, but
+ no global ones.
+ Perception is hypothesis testing (INS ref).
+ Flames and flickers are coherent over tenths of a second, grabbing attention
+ as object hypotheses form.
+ Then, rapidly, patterns fade as attempts at top-down confirmation fail.
+ The resulting dynamic interplay holds the eye.
+\end_layout
+
+\end_body
+\end_document

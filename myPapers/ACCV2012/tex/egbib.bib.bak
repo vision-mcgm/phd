@@ -1,0 +1,408 @@
+1
+@article{oberman2007face,
+  title={Face to face: Blocking facial mimicry can selectively impair recognition of emotional expressions},
+  author={Oberman, L.M. and Winkielman, P. and Ramachandran, V.S.},
+  journal={Social Neuroscience},
+  volume={2},
+  number={3-4},
+  pages={167--178},
+  year={2007},
+  publisher={Taylor \& Francis}
+}
+
+2
+@article{bavelas2007face,
+  title={Face-to-face dialogue as a micro-social context. The example of motor mimicry},
+  author={Bavelas, JB},
+  journal={Gesture and the dynamic dimension of language. Essays in honor of David McNeill},
+  pages={127--146},
+  year={2007},
+  publisher={John Benjamins Amsterdam,, the Netherlands}
+}
+
+3
+@article{mori1970uncanny,
+  title={The uncanny valley},
+  author={Mori, M.},
+  journal={Energy},
+  volume={7},
+  number={4},
+  pages={33--35},
+  year={1970}
+}
+
+4
+@article{lakin2003using,
+  title={Using nonconscious behavioral mimicry to create affiliation and rapport},
+  author={Lakin, J.L. and Chartrand, T.L.},
+  journal={Psychological Science},
+  volume={14},
+  number={4},
+  pages={334--339},
+  year={2003},
+  publisher={SAGE Publications}
+}
+
+5
+
+@article{grossberg2010children,
+  title={How do children learn to follow gaze, share joint attention, imitate their teachers, and use tools during social interactions?},
+  author={Grossberg, S. and Vladusich, T.},
+  journal={Neural Networks},
+  volume={23},
+  number={8-9},
+  pages={940--965},
+  year={2010},
+  publisher={Elsevier}
+}
+
+6
+
+@article{rizzolatti2004mirror,
+  title={The mirror-neuron system},
+  author={Rizzolatti, G. and Craighero, L.},
+  journal={Annu. Rev. Neurosci.},
+  volume={27},
+  pages={169--192},
+  year={2004},
+  publisher={Annual Reviews}
+}
+
+7
+
+@article{dinstein2008mirror,
+  title={A mirror up to nature},
+  author={Dinstein, I. and Thomas, C. and Behrmann, M. and Heeger, D.J.},
+  journal={Current Biology},
+  volume={18},
+  number={1},
+  pages={R13--R18},
+  year={2008},
+  publisher={Elsevier}
+}
+
+8
+
+@inproceedings{mcowan1995algorithms,
+  title={The algorithms of natural vision: The multi-channel gradient model},
+  author={McOwan, PW and Johnston, A.},
+  booktitle={Genetic Algorithms in Engineering Systems: Innovations and Applications, 1995. GALESIA. First International Conference on (Conf. Publ. No. 414)},
+  pages={319--324},
+  year={1995},
+  organization={IET}
+}
+
+9
+
+@inproceedings{anderson2003real,
+  title={Real-time emotion recognition using biologically inspired models},
+  author={Anderson, K. and McOwan, P.},
+  booktitle={Audio-and Video-Based Biometric Person Authentication},
+  pages={1056--1056},
+  year={2003},
+  organization={Springer}
+}
+
+10
+
+@inproceedings{blanz1999morphable,
+  title={A morphable model for the synthesis of 3D faces},
+  author={Blanz, V. and Vetter, T.},
+  booktitle={Proceedings of the 26th annual conference on Computer graphics and interactive techniques},
+  pages={187--194},
+  year={1999},
+  organization={ACM Press/Addison-Wesley Publishing Co.}
+}
+
+11
+@article{brennan1985caricature,
+  title={Caricature generator: The dynamic exaggeration of faces by computer},
+  author={Brennan, S.E.},
+  journal={Leonardo},
+  volume={18},
+  number={3},
+  pages={170--178},
+  year={1985},
+  publisher={Pergamon Press}
+}
+
+12
+
+@article{galton1879composite,
+  title={Composite portraits, made by combining those of many different persons into a single resultant figure},
+  author={Galton, F.},
+  journal={The Journal of the Anthropological Institute of Great Britain and Ireland},
+  volume={8},
+  pages={132--144},
+  year={1879},
+  publisher={JSTOR}
+}
+
+13
+
+@article{rotshtein2004morphing,
+  title={Morphing Marilyn into Maggie dissociates physical and identity face representations in the brain},
+  author={Rotshtein, P. and Henson, R.N.A. and Treves, A. and Driver, J. and Dolan, R.J.},
+  journal={Nature neuroscience},
+  volume={8},
+  number={1},
+  pages={107--113},
+  year={2004},
+  publisher={Nature Publishing Group}
+}
+
+14
+
+@article{berisha2010identifying,
+  title={Identifying regions that carry the best information about global facial configurations},
+  author={Berisha, F. and Johnston, A. and McOwan, P.W.},
+  journal={Journal of Vision},
+  volume={10},
+  number={11},
+  year={2010},
+  publisher={Association for Research in Vision and Ophthalmology}
+}
+
+15
+
+@phdthesis{berisha2009photorealistic,
+  title={Photorealistic retrieval of occluded facial information using a performance-driven face model},
+  author={Berisha, F.},
+  year={2009},
+  school={UCL (University College London)}
+}
+
+16
+
+@article{cook2011exploring,
+  title={Exploring expression space: Adaptation to orthogonal and anti-expressions},
+  author={Cook, R. and Matei, M. and Johnston, A.},
+  journal={Journal of Vision},
+  volume={11},
+  number={4},
+  year={2011},
+  publisher={Association for Research in Vision and Ophthalmology}
+}
+
+17
+
+@article{griffin2011relative,
+  title={Relative faces: Encoding of family resemblance relative to gender means in face space},
+  author={Griffin, H.J. and McOwan, P.W. and Johnston, A.},
+  journal={Journal of Vision},
+  volume={11},
+  number={12},
+  year={2011},
+  publisher={Association for Research in Vision and Ophthalmology}
+}
+
+18
+
+@article{haxby2000distributed,
+  title={The distributed human neural system for face perception},
+  author={Haxby, J.V. and Hoffman, E.A. and Gobbini, M.I.},
+  journal={Trends in cognitive sciences},
+  volume={4},
+  number={6},
+  pages={223--233},
+  year={2000},
+  publisher={Elsevier}
+}
+
+19
+
+@article{grammer1994human,
+  title={Human (Homo sapiens) facial attractiveness and sexual selection: the role of symmetry and averageness.},
+  author={Grammer, K. and Thornhill, R.},
+  journal={Journal of Comparative Psychology; Journal of Comparative Psychology},
+  volume={108},
+  number={3},
+  pages={233},
+  year={1994},
+  publisher={American Psychological Association}
+}
+
+20
+@article{muller2001face,
+  title={Face-to-face with your assistant. Realization issues of animated user interface agents for home appliances},
+  author={M{\"u}ller, W. and Spierling, U. and Alexa, M. and Rieger, T.},
+  journal={Computers \& Graphics},
+  volume={25},
+  number={4},
+  pages={593--600},
+  year={2001},
+  publisher={Elsevier}
+}
+
+21
+
+@article{valentine2001face,
+  title={Face-space models of face recognition},
+  author={Valentine, T.},
+  journal={Computational, geometric, and process perspectives on facial cognition: Contexts and challenges},
+  pages={83--113},
+  year={2001},
+  publisher={Lawrence Erlbaum Associates, Inc Hillsdale, NJ}
+}
+
+22
+
+@inproceedings{turk1991face,
+  title={Face recognition using eigenfaces},
+  author={Turk, M.A. and Pentland, A.P.},
+  booktitle={Computer Vision and Pattern Recognition, 1991. Proceedings CVPR'91., IEEE Computer Society Conference on},
+  pages={586--591},
+  year={1991},
+  organization={IEEE}
+}
+
+23
+
+@inproceedings{garau2003impact,
+  title={The impact of avatar realism and eye gaze control on perceived quality of communication in a shared immersive virtual environment},
+  author={Garau, M. and Slater, M. and Vinayagamoorthy, V. and Brogni, A. and Steed, A. and Sasse, M.A.},
+  booktitle={Proceedings of the SIGCHI conference on Human factors in computing systems},
+  pages={529--536},
+  year={2003},
+  organization={ACM}
+}
+
+24
+
+@techreport{itti2003realistic,
+  title={Realistic avatar eye and head animation using a neurobiological model of visual attention},
+  author={Itti, L. and Dhavale, N. and Pighin, F.},
+  year={2003},
+  institution={DTIC Document}
+}
+
+25
+
+@article{rajan2002realistic,
+  title={A realistic video avatar system for networked virtual environments},
+  author={Rajan, V. and Subramanian, S. and Keenan, D. and Johnson, A. and Sandin, D. and DeFanti, T.},
+  journal={Proceedings of IPT},
+  year={2002},
+  publisher={Citeseer}
+}
+
+26
+@article{polesel2000image,
+  title={Image enhancement via adaptive unsharp masking},
+  author={Polesel, A. and Ramponi, G. and Mathews, V.J.},
+  journal={Image Processing, IEEE Transactions on},
+  volume={9},
+  number={3},
+  pages={505--510},
+  year={2000},
+  publisher={IEEE}
+}
+
+@inproceedings{sheppard1959evolution,
+  title={The evolution of mimicry; a problem in ecology and genetics},
+  author={Sheppard, PM},
+  booktitle={Cold Spring Harbor symposia on quantitative biology},
+  volume={24},
+  pages={131--140},
+  year={1959},
+  organization={Cold Spring Harbor Laboratory Press}
+}
+
+@misc{website:fermentas-lambda,
+      author = "Seeing Machines",
+      title = "FaceAPI product page",
+      month = "July",
+      year = 2012,
+      url = "http://www.seeingmachines.com/product/faceapi/"
+}
+
+@book{jolliffe2002principal,
+  title={Principal component analysis},
+  author={Jolliffe, I.T. and MyiLibrary},
+  volume={2},
+  year={2002},
+  publisher={Wiley Online Library}
+}
+
+@article{cook2012self,
+  title={Self-recognition of avatar motion: how do I know it's me?},
+  author={Cook, R. and Johnston, A. and Heyes, C.},
+  journal={Proceedings of the Royal Society B: Biological Sciences},
+  volume={279},
+  number={1729},
+  pages={669--674},
+  year={2012},
+  publisher={The Royal Society}
+}
+
+@article{rosenblum1996human,
+  title={Human expression recognition from motion using a radial basis function network architecture},
+  author={Rosenblum, M. and Yacoob, Y. and Davis, L.S.},
+  journal={Neural Networks, IEEE Transactions on},
+  volume={7},
+  number={5},
+  pages={1121--1138},
+  year={1996},
+  publisher={IEEE}
+}
+@inproceedings{essa1995facial,
+  title={Facial expression recognition using a dynamic model and motion energy},
+  author={Essa, I.A. and Pentland, A.P.},
+  booktitle={Computer Vision, 1995. Proceedings., Fifth International Conference on},
+  pages={360--367},
+  year={1995},
+  organization={IEEE}
+}
+
+@article{bassili1978facial,
+  title={Facial motion in the perception of faces and of emotional expression.},
+  author={Bassili, J.N.},
+  journal={Journal of Experimental Psychology: Human Perception and Performance},
+  volume={4},
+  number={3},
+  pages={373},
+  year={1978},
+  publisher={American Psychological Association}
+}
+
+@article{calder2001principal,
+  title={A principal component analysis of facial expressions},
+  author={Calder, A.J. and Burton, A.M. and Miller, P. and Young, A.W. and Akamatsu, S.},
+  journal={Vision research},
+  volume={41},
+  number={9},
+  pages={1179--1208},
+  year={2001},
+  publisher={Elsevier}
+}
+
+@article{parry1991dissociable,
+  title={Dissociable face processing impairments after brain injury},
+  author={Parry, F.M. and Young, A.W. and Shona, J. and Saul, M. and Moss, A.},
+  journal={Journal of Clinical and Experimental Neuropsychology},
+  volume={13},
+  number={4},
+  pages={545--558},
+  year={1991},
+  publisher={Taylor \& Francis}
+}
+
+@article{hasselmo1989role,
+  title={The role of expression and identity in the face-selective responses of neurons in the temporal visual cortex of the monkey},
+  author={Hasselmo, M.E. and Rolls, E.T. and Baylis, G.C.},
+  journal={Behavioural brain research},
+  volume={32},
+  number={3},
+  pages={203--218},
+  year={1989},
+  publisher={Elsevier}
+}
+@inproceedings{bitouk2008face,
+  title={Face swapping: automatically replacing faces in photographs},
+  author={Bitouk, D. and Kumar, N. and Dhillon, S. and Belhumeur, P. and Nayar, S.K.},
+  booktitle={ACM Transactions on Graphics (TOG)},
+  volume={27},
+  pages={39},
+  year={2008},
+  organization={ACM}
+}

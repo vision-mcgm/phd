@@ -1,0 +1,500 @@
+\documentclass[a4paper]{article}
+\title{Second-order PCA of dynamic facial expressions for cognitive research}
+\author{Fintan S. Nagle}
+
+
+
+%BEGIN MATRIX GUMF
+% Load TikZ
+\usepackage{tikz}
+\usetikzlibrary{matrix,decorations.pathreplacing,calc}
+
+% Set various styles for the matrices and braces. It might pay off to fiddle around with the values a little bit
+\pgfkeys{tikz/mymatrixenv/.style={decoration=brace,every left delimiter/.style={xshift=3pt},every right delimiter/.style={xshift=-3pt}}}
+\pgfkeys{tikz/mymatrix/.style={matrix of math nodes,left delimiter=[,right delimiter={]},inner sep=2pt,column sep=1em,row sep=0.5em,nodes={inner sep=0pt}}}
+\pgfkeys{tikz/mymatrixbrace/.style={decorate,thick}}
+\newcommand\mymatrixbraceoffseth{0.5em}
+\newcommand\mymatrixbraceoffsetv{0.2em}
+
+% Now the commands to produce the braces. (I'll explain below how to use them.)
+\newcommand*\mymatrixbraceright[4][m]{
+    \draw[mymatrixbrace] ($(#1.north west)!(#1-#3-1.south west)!(#1.south west)-(\mymatrixbraceoffseth,0)$)
+        -- node[left=2pt] {#4} 
+        ($(#1.north west)!(#1-#2-1.north west)!(#1.south west)-(\mymatrixbraceoffseth,0)$);
+}
+\newcommand*\mymatrixbraceleft[4][m]{
+    \draw[mymatrixbrace] ($(#1.north east)!(#1-#2-1.north east)!(#1.south east)+(\mymatrixbraceoffseth,0)$)
+        -- node[right=2pt] {#4} 
+        ($(#1.north east)!(#1-#3-1.south east)!(#1.south east)+(\mymatrixbraceoffseth,0)$);
+}
+\newcommand*\mymatrixbracetop[4][m]{
+    \draw[mymatrixbrace] ($(#1.north west)!(#1-1-#2.north west)!(#1.north east)+(0,\mymatrixbraceoffsetv)$)
+        -- node[above=2pt] {#4} 
+        ($(#1.north west)!(#1-1-#3.north east)!(#1.north east)+(0,\mymatrixbraceoffsetv)$);
+}
+\newcommand*\mymatrixbracebottom[4][m]{
+    \draw[mymatrixbrace] ($(#1.south west)!(#1-1-#3.south east)!(#1.south east)-(0,\mymatrixbraceoffsetv)$)
+        -- node[below=2pt] {#4} 
+        ($(#1.south west)!(#1-1-#2.south west)!(#1.south east)-(0,\mymatrixbraceoffsetv)$);
+}
+
+%END MATRIX GUMF
+ 
+ 
+ 
+
+\input{mylibrary}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+Supervisors: Alan Johnston, Peter McOwan and Harry Griffin
+\\
+5,000 words as counted by  the TeXcount script at \texttt{http://app.uio.no/ifi/texcount/index.html}.
+\vspace{3cm}
+
+\includegraphics[scale=0.5]{img/twofaces.png}
+
+\vspace{3cm}
+
+\textit{Acknowledgements}\\
+The author would like to thank Harry Griffin for his principal components of cheer and helpfulness throughout the project.
+\end{center}
+
+
+\pagebreak
+
+
+\tableofcontents
+
+
+
+\pagebreak
+
+\section{Introduction}
+
+The human face is host to one of the most important channels of communication that can exist between two people: the observation and control of facial expressions. During much of our interaction with others our attention is fixed on their faces, either directly or peripherally. We observe features such as gaze direction\cite{castelhano2007see}, head orientation\cite{hietanen1999does} and expression\cite{tian2002recognizing}; our brains use this information to make conscious or unconscious guesses about the emotional state of another person. In the opposite direction, our own emotional state is reflected in our faces through neural control of the facial muscles, of which there are over 20\cite{gasser1967development}.
+
+Social interaction, along with the facial expressions which underlie communication, are a very important part of social and conflict-based interaction. For this reason, humans have evolved complex recognition and decoding responses, both at the high psychological level (for example, detecting an incoming gaze can make us self-conscious) and the low neuroarchitectural level (for example, the machinery of the fusiform gyrus, an area of the brain specialised for face perception\cite{kanwisher1997fusiform}). Of course, networks of neurons implement and form a substrate for the more abstract psychological processes; we must examine both levels in order to build up an accurate picture.
+
+This report describes the investigation of a new facial expression modelling technique, second-order principal component analysis, which is useful both as a video generation tool and as a comparative model for cognitive research.
+
+We begin by summarising existing work on modelling the human facial processing system and its cognitive properties. A description of the techniques introduced by Sirovich \etal\cite{sirovich1987low} (later extended by the UCL Vision Lab) to model our internal representations of faces is then given. These techniques rely on principal component analysis (PCA), a process which is then re-applied to build a second-order PCA model of dynamic expressions, in this case smiles. The second-order PCA process is discussed and evaluated; finally, potential further work is put forward.
+
+The report is accompanied by a CD containing reconstructed videos produced during the project.
+
+
+%PUT THE BIT ABOUT ANALOGUE vs. SUMMARY MODELS IN HERE, which ones are more useful, etc
+
+%WE NEED THE BIT OF THE INTRO THAT SAYS WHAT WE ARE GOING TO DO, HERE
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=\textwidth]{img/twobrains.png}
+\caption{How brain 1 communicates with brain 2 via expressions; the signal is first neural (as brain 1 controls its facial muscles), then visual (as light passes from the face of person 1 to the eyes of person 2), then neural again as it passes from the observer's eyes to their brain. This link is present bidirectionally between two conversing people. (Public domain images.)}
+\label{bubbles}
+\end{figure}
+
+\section{Literature Review}
+
+This section begins by summarising and comparing major models of human face processing. The technique of PCA is then explained and its applications to expression modelling are shown.
+
+\subsection{Existing efforts to model face processing}
+
+Explaining the neurological mechanisms underlying face processing is a facet of the most significant problem in psychology and neuroscience: determining how the brain links low-level processing units (neurons) to form larger integrative and problem-solving units. The major obstacle to its resolution is the small physical scale of the brain's neuroarchitecture and the phenomenal complexity thereof (the brain contains on the order of $10^{13}$ neurons, each with thousands of incoming connections\cite{patterson1998artificial}).
+
+Our only method of elucidating brain function, therefore, is to make high-level (either behavioural, experimental, or broadly neural with fMRI scanning) or local (such as electrically monitoring a single neuron) observations  and use these to make likely assumptions or definite deductions about the unknown features of brain operation. Until we develop imaging techniques capable of directly observing low-level, broad-scale neural function (and the processing capability required to store and analyse such a huge amount of data), we are restricted to building models of cognition and refining them by comparing their predictions with reality.
+
+
+
+One important distinction we can make between models is their purpose.
+
+\begin{itemise}
+\item \textit{Analogue models} aim to \textit{accurately replicate} (form an \textit{analogue}\footnote{This is the original etymology of the term \textit{analogue computer}.}) of a real system. They aim to encapsulate all our knowledge of a system and provide as much predictive and simulatory power as possible. We often build analogue models when we understand a system well; examples include wind-tunnel airflow simulators, flight simulators, electronic circuit simulation programs, and modern computer physics engines.
+
+\item \textit{Summary models} are not required to be similar in any way to the actual mechanisms of a real system. They can simplify the real system or leave out major parts. We often build summary models of systems we do not thoroughly understand; examples include weather prediction, neural network models of cognition, the Lotka-Volterra population equations\cite{takeuchi1996global}, and early computer physics engines.
+
+
+\end{itemise}
+
+The analogue-summary distinction is more of an informal axis than a binary classification; we can refer to models as being ``more analogue" or ``more summary" than others. The most analogue model possible is a direct copy of the target system itself, with exactly the same behaviours. The more summary a model is, the less faithful it is to the real system, and the fewer the predictions it can make about the target system.
+
+Although it may at first seem impossible to deduce much about the unknown mechanisms of the brain from high-level behavioural activity, there are many key observations which imply properties of the face processing system, including:
+\label{obslist}
+\begin{itemise}
+
+\item \textit{Repetition priming. }A familiar face which has been seen recently is responded to faster than one which has not been encountered for a longer time.
+
+\item \textit{Double dissociations.} If two neurological features can each be absent or nonfunctional in different impaired individuals (while the other feature is still present), it is highly likely that these features are independent (precisely, that they are implemented by separate neurological systems). For example, some patients can recognise identity but not emotional expression from faces; in some patients, the converse is true.
+
+\item \textit{Distinctiveness.} In experiments testing recall and recognition of faces, exemplars which are distinctive are more likely to be accurately recognised. Conversely, typical faces are more likely to be confused with each other or incorrectly identified\cite{bartlett1984typicality,light1979recognition}. We can deduce from this that a face's distinctiveness plays a part in its cognitive representation; distinctive faces are processed differently, in some respect, to non-distinctive faces.
+
+\item \textit{Race.} Adults recognise faces belonging to people of other races with lower accuracy than they do own-race faces. However, this effect is absent in children. 
+
+%Goldstein \etal account for this change by positing that face recognition through use of a schema becomes more efficient over time, thus attuning the schema to faces of the same race as its owner. Conversely, there may be some adult mechanism which explicitly interferes with recognition of faces deemed to be "foreign," perhaps to make cross-population interaction more difficult (which could serve an evolutionary purpose similar to that which favours within-group altruism\cite{trivers1971evolution}.)
+
+\item \textit{Inversion.} Adults also find it more difficult to recognise inverted faces, and this effect is virtually absent in children\cite{goldstein1975recognition}. This could be explained by the same maturing-schema hypothesis proposed to explain race-based recognition differences, and Occam's razor (otherwise known as the principle of parsimony\cite{sober1981principle}- a valuable deductive tool in cognitive science, as evolved processes often tend towards efficiency and simplicity) decreases the credibility of an explicit foreign-face-recognition interference mechanism.
+
+\end{itemise}
+
+Overall, these deductions are very vague; they are all expressed in natural language and lack any kind of logical formalism. This, of course, is because we have no such formalism in which to express cognitive concepts; we are forced to use terms like ``memory"  to express encodings and structures we know next-to-nothing about.
+
+For example, Light \etal proposed that distinctive faces are easier to recognise as they access ``specific memories," whereas unseen, but typical faces are falsely recognised as they activate ``schematic memories"\cite{light1979recognition}. This hypothesis is based around an apparent distinction between two types of memory, specific and schematic. There is much inferred evidence for a schema-based structure of memory\cite{tsujimoto1978distorted, alba1983memory}, but this distinction still lacks much detailed neurological or architectural support.
+
+Hypotheses in cognitive science are often built on top of other theories in this way. Although this is the only way to proceed in deconstructing the brain deductively rather than empirically through actual mapping, we must be careful to appreciate the distance between terms like ``memory" and the phenomenally complex implementation which memories doubtless exhibit. Nevertheless, such deductions can still lead to sensible, useful and experimentally confirmable predictions (such as  Valentine's guess that distinctive faces should take longer to be classified than typical faces, later confirmed\cite[p.163]{valentine1991unified}).
+
+We make use of models in cognitive science by following a meta-process of:
+
+\begin{enoomerate}
+\item Building a model and observing its behaviour.
+\item Observing, under similar circumstances, the behaviour of the brain.
+\item Studying the differences and similarities between the two behaviours; making deductions therefrom about the differences and similarities between the model's machinery and the brain's machinery.
+\end{enoomerate}
+
+One of the first modern models of the human face processing system was the Bruce and Young model\cite{bruce1986understanding}(figure \ref{bruce}). It uses the observation that recognition of identity, expression and speech can each be impaired separately by neurospychological conditions \cite{hole} to support the deduction that the brain handles these processes more or less separately.
+
+Bruce and Young go on to posit seven different types of ``information codes” representing the interpretation and storage of a particular type of information in the brain, although they do not go into any further detail about their precise neurocognitive representation. Leaving this information undefined seems wise, since we are still very far from understanding how the brain stores information on a low level.
+
+%The Bruce and Young model also includes abstract entities called Face Recognition Units (FRUs), Person Identity Nodes (PINs), Semantic Information Units (SIUs), and Name Units. These are cognitive processes which activate when (respectively) a face is recognised, it is recognised as a certain person, some semantic information is accessed, and a person's name is recalled. The integration of these units in the overall model is shown in figure \ref{bruce}.
+
+
+
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.5]{img/brucemodel.png}
+\caption{Bruce and Young's view of the face processing system. From \cite{bruce1986understanding}.}
+\label{bruce}
+\end{figure}
+
+The Bruce and Young model was later extended to the Interactive Action and Competition (IAC) model\cite{burton1993naming}, which formalised the components of its predecessor into a computational model in which units compete to activate other units. This model did well by retaining much of the nondeterminism necessary when modelling such an ill-known system.
+
+%BEGIN philoso-rant
+
+
+
+%we need to be aware that there is a huge, huge distance between our best theories and what is actually going on.
+
+%END philoso-rant
+
+Later, Valentine's Multidimensional Face Space model used the observations of distinctiveness, race and inversion noted on page \pageref{obslist} as support for ``a framework... in which faces are assumed to be encoded as points in a multidimensional space."\cite[p.165]{valentine1991unified}. Formally, this conceptualisation takes the form of a hyperspace of unspecified dimensionality. ``Example axes" such as hair length or hair colour are given, but no actual axes are specified. Each face is represented as a point (with a certain degree of error) in this space, and measurements such as the distance (Euclidean or otherwise) between two points or the distance between a point and the centre of the space (the ``norm") can be made. Face recognition (determining whether an exemplar is a face or not) is represented as some kind of ``decision process;" face identification (determining whether an examplar is a known face, and if so which) is represented by the distance between the point corresponding to that examplar and either \xa the norm or average face or \xb a set of other faces to which the exemplar is compared. This difference separates the \textit{norm-based} and \textit{exemplar-based} versions of the framework.
+
+This framework is both surprisingly formal (including concepts such as points, vectors and space) and surprisingly lacking (leaving concepts such as the distance metric, dimensionality, and details of the decision process or comparison set in the exemplar-based version) unspecified.
+
+Valentine is also unclear about the exact relationship between the face-space framework and the real processes of cognition. He terms it variously ``an heuristic framework," ``a... metaphor for the mental representation of a face," and a ``model." It is unclear whether he intends it to be a summary model or an analogue one.
+
+On the one hand, it is buillt from components which are very unlikely to be formally expressed in the brain. Concepts such as geometry, distance, and specifically placed points are human creations; we have no reason to suppose that the brain's neural architecture relies on such artificial concepts. Furthermore, the face-space model is hierarchical; it is built from concepts which rely upon each other (for example, ``similarity" can be decomposed into ``distance," which can be decomposed into, for example, Euclidean distance). Other evolved processing systems, such as the immune system\cite{cohen2006immune} or the glucose-insulin system (which performs a complex regulatory task\cite{cobelli2002physiological}) have been found to operate in an emergent manner; their behaviours simply \textit{happen} in a non-designed way, rather than being back-traceable through a series of hierarchical components, as occurs in a designed system such as an electronic computer. Face recognition (and cognitive processes in general) could occur in a similar way. This makes face space unlikely to be a good analogue model of brain function, as it is based around so many needless high-level concepts.
+
+On the other hand, Valentine describes some unspecified parts of the model, such as the decision process, as ``yet to be filled in," which implies that further research will refine it and reveal the ways in which it is closer to reality. Furthermore, he describes auto-associating neural networks as ``an implementation of the norm-based [face space] coding model," implying that the brain is another such implementation.
+
+However close to reality Valentine considers it, the face space model has certainly proved ``a potential link between many aspects of face recognition research," as Valentine claims. It has provided a clear framework for discussion and research which is still in use today, and is a natural metaphor for one potential way of representing faces. It is also especially well-suited to a major tool of modern facial modelling: principal component analysis, which is discussed shortly.
+
+Given our limited neuroarchitectural knowledge, our current models must be much more summary than analogue. Their purpose is more result-comparison with empirical data about real cognitive behaviour (in order to make deductions about the systems underlying real cognitive behaviour) than replicating the brain's architecture. The second-order PCA model presented next is one such model; it may only superficially resemble real cognitive processes, but it allows us to make deductions about them.
+
+Details of the brain's machinery will likely be finally revealed by a combination of deductive research (with summary modelling) and investigatory research (using imaging).
+
+
+
+
+\subsection{The expression modelling pipeline}
+
+This section concisely describes the UCL Vision Research Lab's pipeline for expression deconstruction, modelling and reconstruction from a series of coefficients. Substantially more detail may be found in Appendix \ref{a:pipeline}.
+
+The pipeline is based upon the technique of principal component analysis (PCA)\cite{wood1987principal}, a technique which highlights the axes of largest variance in a set of multivariate point data. Each point is defined by $d$ coordinates along the normal axes of the space. PCA imposes $b$ \textit{new axes} on the space (the choice of $b$ is down to the operator, subject to $b<d$) and expresses each point by $b$ coordinates along each of these new axes. Each new axis is chosen so that it spans the maximum possible variance among the points. The technique's usefulness lies in its ability to compress and summarise important data; it can also be used to separate meaningful data (important principal components) from noise (smaller principal components).
+
+The first research on the application of PCA to faces was done by Sirovich \etal in 1987\cite{sirovich1987low}, who evaluated the feasibility of the technique on a set of example faces. Taking each face (a 128 $\times$ 128 pixel greyscale picture) as a point in $D$-dimensional space, with $D= 128^2 = 2^{14}$, they performed PCA to extract a series of $B$ basis vectors spanning the subspace in which the example faces were situated. They noted that each face can be expressed
+%CHECK THIS
+by adding together a series of ``eigenfaces" (points in $B$-space, each one generated by extending a basis vector by a certain coefficient). To make their method work, Sirovich \etal had to perform a substantial degree of cropping and normalisation before applying PCA; their test set was also composed exclusively of young Caucasian males.
+
+%Faces can also be ``caricatured" by increasing the length of their symbolising vector while maintaining its direction, and ``anticaricatured" by flipping the direction of their symbolising vector.
+
+Work over the intervening years has extended this simplistic application of PCA into a more mature method capable of dealing with a wider variety of faces and expressions in full colour. The Vision Lab uses advanced warping techniques (see Appendix \ref{a:pipeline}) to represent an image of a face as a high-dimensional vector containing \xa serialised bitmap information describing the colour of the face \xb serialised warp field information describing how to reshape the colour information into the shape of the face. This process is summarised in figure \ref{f:spaces}.
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=\textwidth]{img/spaces.png}
+\caption{How smiles (sequences of expressions in frame space) are serialised, then represented in clip space and its PCA-obtained subspace, smile space. See Appendix \ref{a:pipeline}.}
+\label{f:spaces}
+\end{figure}
+
+
+
+% bit about how current techniques do too much normalisation
+%-same face images throughout an experiment
+
+
+%thereis a good example of this in valentine 2001 p167
+
+%Limitations and good points
+
+%Possible alternatives (maybe put this in own section out of review)
+
+\section{Modelling dynamic expressions}
+
+This section describes the design and execution of a feasibility study into performing second-order PCA on video data using the Matlab programming environment.
+
+The term ``second-order PCA", \textit{per se}, is not very informative. ``Second-order" usually implies some kind of extension, repetition or re-application of a procedure (see second-order logic, arithmetic and differential equations). In this case, the actual process of PCA is unaltered. We take ``second-order" to mean simply that we apply PCA once to generate some data, and then take these data as input to a second application of PCA. In short,
+
+\begin{enoomerate}
+\item Take a succession of still pictures, generate a description vector for each one (composed of RGB values and \{x,y\}-warp fields) and generate a PCA space using the methods described earlier.
+\item Take a video sequence, separate it into frames, and obtain the PCA axis loadings for each frame.
+\item Concatenate the PCA axis loadings for each frame into a description vector for each video sequence.
+\item Build a PCA space around these description vectors; each video sequence is now a point in this second-order PCA space (hereafter, \pcatwo  space). Different video sequences can be extracted by changing this point's co-ordinates in \pcatwo space (the loadings on the basis vectors of that space).
+\item Take points in the \pcatwo space (either points corresponding to initial video clips, or completely new points) and use the inverse of the above process to generate sequences of points in the first PCA space, then assemble video clips.
+\end{enoomerate}
+
+\pcatwo can be useful for expression modelling for several reasons. First of all, it is an extension to first-order expression modelling allowing dynamic expressions to be represented; this model could allow interesting and informative behaviour comparisons with real cognitive behaviour. Secondly, it provides us with an easy way of generating artificial video sequences based on certain parameters; such sequences are often used in psychological experiments, and a consistent, computerised and parametrisable generation method is desirable. Finally, \pcatwo has many envisageable non-scientific but nonetheless very useful applications in such areas as communication, video compression, security, animation, and entertainment. The technique's main purpose, however, is to aid the furthering of our understanding of face processing and other cognitive processes.
+
+Figure \ref{fig:flows} shows some parts of the pipeline.
+
+The aim was to generate \pcatwo points representing video clips of smiles, in order to investigate the effectiveness of \pcatwo in modelling a the different forms of specific expression. The ``model" here consists of the first-order PCA space, the \pcatwo space, and the code required to generate these spaces and to rebuild images and video clips from more detatched representations. It is very much a summary model, as it completely ignores all cognitive, neuromuscular and psychological aspects of smiling.
+
+The following convention is used in what follows:
+
+\vspace{0.5cm}
+\begin{tabular}{r l }
+$F$ &  $f$-dimensional \textit{frame space} whose points represent serialised frames. \\
+&$f=60000$ throughout. \\
+$E$ &  $e$-dimensional 1\up{st} order PCA space: \textit{expression space}. $e=75$ throughout.\\
+$C$ &  $c$-dimensional \textit{clip space} whose points represent  serialised clips. \\
+&$f=11250$ (75 coefficients $\times$ 150 frames) throughout.\\
+$S$ & $s$-dimensional 2\up{nd} order PCA space: \textit{dynamic expression} or \textit{smile space}.  \\
+\end{tabular}\vspace{0.5cm}
+
+These terms are appropriate as each point in $E$ captures an expression (static frame), while each point in $S$ captures a motion sequence (dynamic expression). As the only dynamic expressions studied in this project were smiles, ``smile space" seems appropriate.
+
+Note that $F$ contains all possible images. $C$, on the other hand, contains all possible clips which can be built out of frames generated by points in $E$; its shape is determined by the set of frames used to generate $E$.
+
+\label{matrixrep}
+
+$M_E$ and $M_S$ symbolise the matrices used to change a point's coordinate system: $M_E$ is an $f$-by-$e$ matrix and $M_S$ a $c$-by-$s$ matrix. 
+
+\[
+M_E=
+\begin{tikzpicture}[mymatrixenv,baseline=0cm]
+    \matrix[mymatrix] (m)  {
+        . & . & . \\
+        . & . & . \\
+        . & . & . \\
+        . & . & . \\
+    };
+    \mymatrixbraceright{1}{4}{$f$}
+    \mymatrixbracetop{1}{3}{$e$}
+\end{tikzpicture}
+\hspace{0.5cm}
+M_S=
+\begin{tikzpicture}[mymatrixenv,baseline=0cm]
+    \matrix[mymatrix] (m)  {
+        . & . & . \\
+        . & . & . \\
+        . & . & . \\
+        . & . & .  \\
+    };
+    \mymatrixbraceright{1}{4}{$c$}
+    \mymatrixbracetop{1}{3}{$s$}
+\end{tikzpicture}
+\]
+
+
+
+
+%why matlab... agile
+
+\subsection{Data collection and post-processing}
+
+As this project was a feasibility study, it was deemed best to start with video sequences from only one subject. This subject was recruited informally from the author's friends and the standard ethics and data protection procedures were applied, including full briefing and signature of a consent form.
+
+The goal of the data collection process was to obtain good quality video of a diverse range of different smiles. After being informed that they were going to be filmed as part of an experiment into facial expressions, the subjects were asked to respond naturally to a series of jokes told to them by the experimenter. The only other advice they were given was to keep a relatively straight face until the punch line. More details of the experiment can be found in Appendix \label{appc}.
+
+Efforts were made to keep extraneous features (such as lighting, hairstyle and the subject's gross distance from the camera) constant.
+
+To generate an initial first-order PCA space, a selection of frames covering a wide range of the subject's expressivity was required (in order to let the space cover a wide range of possible expressions). A limit of 3000 frames was put on the input to the initial PCA space (due to memory constraints of the hardware used to run the generation code). This corresponded to 20 clips of 3 seconds each at 50 fps.
+
+An alternative approach would have been to subsample at a much lower frame rate, allowing a wider range of expressions to be used to build the PCA space. 
+
+\subsection{The \pcatwo pipeline}
+
+
+\begin{figure}[htp]
+
+\centering
+\subfigure[Building first- and second-order PCA spaces.]{
+\includegraphics[scale=0.2]{img/flow1.png}
+\label{fig:subfig1}
+}
+\subfigure[Reconstructing an image from its $b$-loadings.]{
+\includegraphics[scale=0.2]{img/flow2.png}
+\label{fig:subfig2}
+} \subfigure[Reconstructing a clip from its $s$-loadings.]{
+\includegraphics[scale=0.2]{img/flow3.png}
+\label{fig:subfig3}
+}
+\label{fig:flows}
+\caption{Flowcharts explaining parts of the pipeline. \textit{Note:} the expression space and the smile space are not actually represented by $e$- and $s$-dimensional vectors; it is the \textit{spaces} which are $e$- and $s$-dimensional. Their representations are matrices $M_E$ and $M_S$ as described on page \pageref{matrixrep}.}
+\end{figure}
+
+
+
+The next step was the choice of algorithm used to build the PCA spaces; two existing implementations were already present in the form of Matlab code written at the Vision Research Lab:
+
+\begin{enoomerate}
+\item A version of PCA employing the expectation-maximisation (EM) algorithm\cite{roweis1998algorithms} originally formalised by Dempster \etal\cite{dempster1977maximum}.
+\item A version of PCA using singular value decomposition (SVD)\cite{de1994singular}.
+\end{enoomerate}
+
+The SVD version was selected as it had been in use for longer; the EM version still required some debugging and had not been formally tested. Morph vectors corresponding to each of the 3000 source frames were generated; this had to be done by Harry Griffin at the Vision Lab, as the MCGM code was proprietary. This resulted in a 60,000-D vector (RGB and $\{x,y\}$ warp components for each pixel in a 120 $\times$ 100 image) for each frame.
+
+The SVD implementation of PCA was then used to generate a 60-D expression space $E$ encoded by the transformation matrix $M_E$. This computation took under an hour on 1 dual-core\footnote{Intel Core i3.} 3.06 GHz iMac with 4GB of RAM. The processing times and post-processing storage times are shown in figure \ref{timings}.
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=\textwidth]{img/timings.png}
+\caption{Data storage (not RAM) requirements and processing times for key parts of the pipeline.}
+\label{timings}
+\end{figure}
+
+
+Prewritten Matlab scripts were used to observe the effect of varying the first 12 principal components of $E$. It was noticed that in one of the initial clips the lighting rig had not been set up correctly, leading to the first and largest principal component mostly capturing this variance in lighting. The first 3 PCs also largely accounted for a variance in the subject's hairstyle, which they had changed twice during the capture process.
+
+It was desirable to have the PCs account for sensible facial expression features rather than lighting and hairstyle changes, so it was decided to split the initial sequence of 20 video clips, $V$, into 3 sets:
+
+\vspace{0.5cm}
+\begin{tabular}{r l }
+$V_1$: & 14 clips (2100 frames). Constant lighting, 3 different hairstyles. \\
+$V_2$: & 6 clips (900 frames). Constant lighting, constant hairstyle. $V_2 \in V_1$. \\
+\end{tabular}
+\vspace{0.5cm}
+
+Next, Matlab functions (see Appendix \ref{appb} were written to accomplish the following tasks:
+
+\label{abserror}
+\begin{itemise}
+\item Build the second-order PCA space.
+\item Reconstruct a clip from an $s$-vector of loadings in smile space.
+\item Reconstruct a clip from an $s$-vector, then produce a video showing \xa the reconstructed video \xb the original video \xc the difference between the two videos, side-by-side. For each pair of original and reconstructed frames $f_o$ and $f_r$, a ``difference frame" was constructed by subtracting the value of each pixel on each channel in $f_o$ from the corresponding pixel value in $f_r$, taking the absolute value (so that the results were in the interval $[0,1]$) and building a new frame from these values.
+\item Generate a random smile video clip from an $s$-vector with appropriately distributed coefficients. Each element in the random $s$-vector should have zero mean and the same variance as the corresponding element in the set of $s$-vectors describing the set of real video clips the PCA space was generated from. This was done by finding the variance of these real-clip $s$-vectors, then choosing random coefficients from a normal distribution with zero mean and the appropriate variance.
+\end{itemise}
+
+Attempts were made to implement a GUI allowing live control and reconstruction of frames and clips from PC loadings controlled by moving sliders. Unfortunately, the idea had to be abandoned due to the time (0.3s) taken to reconstruct frames.
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=\textwidth/2]{img/gui.jpg}
+\caption{Prototype image reconstruction GUI (showing a slightly caricatured expression); abandoned due to responsiveness issues.}
+\label{gui}
+\end{figure}
+
+%Detailed explanation of the process
+
+%Different serialisation issues
+
+
+
+
+
+\subsection{Effect of the number of PCs}
+\label{stddevs}
+It was desirable to study the effect of $s$, the dimensionality of smile space, on the fidelity of reconstructed video clips $c_r$ to original clips $c_o$. Two error metrics were defined to check consistency:
+
+\begin{enoomerate}
+\item \textit{Absolute error.} For each frame in a clip, an error frame was built as described on page \pageref{abserror}. A scalar error was then calculated for each frame $f$ by summing the errors for each pixel $p$ and channel $c$; finally, a scalar clip error was obtained by summing all the frame errors.
+
+\begin{equation}
+\textrm{error}_{\textrm{absolute}}= \sum_{f} \sum_{p} \sum_{c} | c_o(f, p, c) - c_r(f,p, c) |
+\end{equation}
+
+\item \textit{Euclidean error.} Considering each frame as a point in $n$-D space ($n = h \times w \times 3$)\footnote{$h \times w$ pixels and 3 colour channels.} allowed a scalar error to be calculated as the Euclidean distance between two frames. A scalar clip error was constructed by summing the error for each frame.
+
+\begin{equation}
+\textrm{error}_{\textrm{euclidean}}= \sum_{f} \sqrt{\sum_{p} \sum_{c} (c_o(f, p, c) - c_r(f,p, c) )^2}
+\end{equation}
+
+
+\end{enoomerate}
+
+Next, PCA spaces were built with different values of $s$; video set $V_2$ was chosen as it had the largest number of clips. Values of $s$ were $\{1,2,3,4,5,8,10,14\}$($s<\#(V_2)$ as the dimensionality of a PCA space must be smaller than the number of observations in the source data set).
+As shown in figure \ref{graph1}, the error measures were consistent (they are mathematically very similar) and monotonically decreased as $s$ went up. This was to be expected, as more PCs account for more of the original variance and allow better reconstruction. 
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=\textwidth]{img/graph1.png}
+\caption{Effect of varying $s$ on the absolute and Euclidean error.}
+\label{graph1}
+\end{figure}
+
+This effect was confirmed by informally viewing a selection of clips across different values of $s$. Reconstruction was noticeably better for higher $s$, especially for detailed facial features like eye movement and exact facial angle (blinking is only reconstructed realistically from around $s=10$). Low $s$ led to the mouth and nose seeming ``disconnected" from the rest of the face.
+
+
+
+\subsection{Generating artificial smiles}
+
+To determine which aspects of expression were captured by each principal component, a selection of videos were generated from $s$-vectors with all loadings set to zero except one, which was offset from zero by 2 standard deviations of that component in the positive or negative direction. In this case the smile space had dimensionality 7, leading to 14 videos showing the ``extremities" of each principal component.
+
+Viewing all the videos side-by-side in sync allowed PCs to be compared. PCs were not intuitively attributable to particular features (such as level of teeth shown), but they did appear significantly opposite (the positive and negative loadings of one PC showed the eyes and mouth opening slightly and extremely, for instance; one of the PCs seemed to capture blinking). The difficulty in picking out the characteristics the PCs captured probably stems from the high similarity of all the smiles captured; using a wider range of emotions might give better results.
+
+It is interesting to imagine a modification of PCA (minus PCA's orthogonality constraint) in which loading axes are \textit{chosen} explicitly to capture particular variations in the target data; for example, we could explicitly search for an axis of mouth dimpling or blink speed.
+
+\subsection{Caricaturing and temporal dynamics}
+
+Caricaturing a dynamic expression is done by extending or reducing the length of its $s$-vector while maintaining its direction constant. An interesting question was whether caricaturing would affect the  temporal as well as spatial dynamics of the resulting video clip.  If so, a dynamic expression's spatial and temporal components would be in a way separable; \pcatwo could then be used to perform experiments investigating whether the same was true in the brain's cognitive representation.
+
+To answer this question, an expression was chosen and several videos generated at various levels of caricaturing, from 0.5 to 2. The videos were compared side-by-side. Spatial dynamics were definitely affected; the amplitude of various facial features such as mouth opening were increased with the level of caricaturing, and the expressions looked convincingly more ``intense." However, temporal dynamics did not seem to be affected; the smiles had the same speed of onset and duration as without caricaturing. Attempting to time-caricature dynamic expressions would be a very interesting task.
+
+%How we generated stuff
+
+A targeted experiment could explore this area further by building a PCA space from similar smiles which varied in speed and duration (perhaps by artificially speeding up and slowing down video before it entered the pipeline).
+
+%How similar they are to reality
+%Possible disadvantages of the process
+%Advantages
+
+%We need to put something about PCA spacetime in here somewhere.
+
+\section{Conclusion}
+
+We conclude that second-order PCA ($\textrm{PCA}^2$) appears a promising technique for modelling facial expression and emotion processing, and conducting research thereon. It is capable of high-fidelity reconstruction of 50 fps video of expressions from as little as 5 real coefficients per clip, plus 30 MB of additional data (far less than would be required to store the original clips; this data is also constant for increasing numbers of clips).
+
+In this case, the implementation of \pcatwo was limited by the single emotion (smiling and laughing with various degrees of intensity) that it was used to capture. The subspaces of frame space $F$ and clip space $C$ spanned by the subspaces generated\footnote{Multiplying all points in $E$ by $M_E$ generates points forming a subspace of $F$; respectively for $S$, $M_S$ and $C$.} from this particular expression space $E$ and smile space $S$ therefore captured only smiles, not the full range of possible dynamic expressions. This meant that most points in $S$ generated clips of smiles.
+
+Further work would focus firstly on capturing a wider range of emotions, allowing the corresponding dynamic expression space $D$ to contain more emotions. Deductions could then be made about whether the brain's internal representation of emotion and expression is similar to the \pcatwo pipeline, or not.
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=\textwidth/2]{img/hexagon.png}
+\caption{The emotional hexagon.}
+\label{f:hexagon}
+\end{figure}
+
+For example, a common diagram of human emotion is the \textit{emotional hexagon} (see figure \ref{f:hexagon})\cite{sprengelmeyer1997disgust,calder2003facial,sprengelmeyer1999knowing}. It arranges six ``primary" emotions into a hexagon so that adjacent emotions are more ``similar" or ``confusable", while diametrically opposite emotions are easily differentiable.
+
+A dynamic expression space containing sufficient emotions could be used to generate artificial emotion-clips midway between two of the primaries (or at other selected points in $D$); these could then be classified by experimental subjects to support or disprove the relationship embedded in the emotional hexagon.
+
+Subjects could also be adapted to emotions and their corresponding antiemotions (points in $D$ and their opposites across the origin). For example, consider possible results in which ``anti-sadness" was processed in the same way as ``happiness;" this would be evidence that the cognitive representations of happiness and sadness are somehow symmetric and opposite. Another key question is whether such representations are relative or absolute.
+
+Encoding temporal dynamics is a very interesting question, although hard to formalise given our lack of knowledge about cognitive representations of time. At the moment, \pcatwo can only encode expressions of identical length, as their vectors in clip space must be the same length (include the same number of frames). Expression space could conceivably be extended by adding another dimension and storing the \textit{time offset} of a frame as well as its image data; this would allow expressions of differing length to be stored, as long as the frame counts were identical. Exploring the consequences of representing time in the same way as image data (or other, alternative representations of time) would be very interesting.
+
+Experiments with clips generated by \pcatwo would only ever be able to draw high-level conclusions about cognitive function; however, such observations could still afford a great deal of insight into brain function, and at a much lower cost than functional neuroimaging\cite{cabeza2001handbook} or neural circuit reconstruction\cite{smith2007circuit}. \pcatwo is in a way an extension of the multidimensional, relative coding scheme of Valentine's face space; experiments may confirm that dynamic expressions as well as static expressions are encoded like this, which would increase the likelihood that this type of encoding is widespread across other cognitive processes or the representation of other ideas and concepts.
+
+
+
+
+%the pca spacetime
+
+%the thing needs to include more expressions! possibly let's use the emotional.
+
+%the idea that we may have to process things in terms of the neural movements- we are very good at copying expressions, could this mean something? the input and output systems are likely to be linked, no?
+
+\begin{singlespace}
+\begin{footnotesize}
+\begin{twocolumn}
+\bibliographystyle{unsrt}
+\bibliography{references}
+\end{twocolumn}
+\end{footnotesize}
+\end{singlespace}
+\newpage
+
+\input{appendices}
+
+
+

@@ -1,0 +1,16 @@
+digraph G
+{
+graph [rankdir=LR];
+        node [shape = record,margin=0];
+
+        node0 [ label ="  STIMULUS", margin=0.1];
+        node1 [ label ="REPRESENTATION", margin=0.1];
+        node2 [ label ="COMPARISON", margin=0.1];
+        node3 [ label =" RESPONSE ", margin=0.1];
+  
+
+        "node0":f0 -> "node1":f1;
+        "node1":f2 -> "node2":f1;
+        node2->node3;
+
+}
